@@ -6,6 +6,7 @@ const example = () => {
 };
 
 window.example = example;
+$('#myModal').modal('toggle')
 
 // fetch('./data/lol/lol.json')
 // .then(function(response){
@@ -18,7 +19,7 @@ window.example = example;
 // -----------Funciona
 
 // const dataLol = url => fetch(url).then(response => response.json()) ;
-  
+
 // Promise.all(
 //   [
 //     dataLol('./data/lol/lol.json')
@@ -56,12 +57,12 @@ window.example = example;
 
 const url = './data/lol/lol.json'
 fetch(url).then(response => {
-  if(response.status !== 200){
+  if (response.status !== 200) {
     console.log('Error al cargar el url' + response.status)
     return;
   }
   response.json()
-  .then(data => getData(data))
+    .then(data => getData(data))
 }).catch(err => console.log('Fetch error' + err))
 
 // para async
@@ -71,20 +72,20 @@ const getData = (data) => {
   data = data.data
   // console.log(data)
   const array = [];
-  let objData= {
+  let objData = {
     name: '',
     title: '',
     rol: '',
     rol2: '',
     image: ''
   }
-  for (const key in data){
+  for (const key in data) {
     objData = {
-     name : data[key].name,
-     title:  data[key].title,
-     rol : data[key].tags[0],
-     rol2 : data[key].tags[1],
-     image:  data[key].splash
+      name: data[key].name,
+      title: data[key].title,
+      rol: data[key].tags[0],
+      rol2: data[key].tags[1],
+      image: data[key].splash
     }
     array.push(objData)
     printData(objData)
@@ -93,14 +94,14 @@ const getData = (data) => {
   return array;
 }
 
-  const printData = (result) => {
-    const print = document.getElementById('root');
-    let name = result.name
-    let title = result.title
-    let rol = result.rol
-    let rol2 = result.rol2
-    let image = result.image
-     printCard = `<div class=" col-12 col-sm-6 col-md-3">
+const printData = (result) => {
+  const print = document.getElementById('root');
+  let name = result.name
+  let title = result.title
+  let rol = result.rol
+  let rol2 = result.rol2
+  let image = result.image
+  printCard = `<div class=" col-12 col-sm-6 col-md-3 shadow-lg p-3 mb-0 target">
     <div class="card">
       <img src="${image}" width="100%"; height="50%" class="card-img-top" alt="${name}">
       <div class="card-body">
@@ -116,8 +117,7 @@ const getData = (data) => {
       </div>
     </div>
   </div> `;
-    print.insertAdjacentHTML('beforeend', printCard);
-    console.log(result.image);
+  print.insertAdjacentHTML('beforeend', printCard);
+  console.log(result.image);
 
-  }
-   
+}
