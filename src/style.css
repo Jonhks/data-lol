@@ -45,3 +45,7 @@ h1{
     border: solid 1px white;
     color: rgb(134, 108, 65);
 }
+
+.card-text{
+    font-size: .8em;
+}
