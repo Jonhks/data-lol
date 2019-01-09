@@ -77,7 +77,8 @@ const getData = (data) => {
     title: '',
     rol: '',
     rol2: '',
-    image: ''
+    image: '',
+    logo: ''
   }
   for (const key in data) {
     objData = {
@@ -85,10 +86,13 @@ const getData = (data) => {
       title: data[key].title,
       rol: data[key].tags[0],
       rol2: data[key].tags[1],
-      image: data[key].splash
+      image: data[key].splash,
+      logo: data[key].img
     }
+    // console.log(data[key].img);
     array.push(objData)
     printData(objData)
+    
   }
   printModal(data)
   // console.log(data);
@@ -102,6 +106,7 @@ const printData = (result) => {
   let rol = result.rol
   let rol2 = result.rol2
   let image = result.image
+  let logo = result.logo
   let printCard = `<div class=" col-12 col-sm-6 col-md-3 shadow-lg p-3 mb-0 target ">
     <div class="card champs">
       <img  id="${name}" src="${image}" width="100%"; height="40%" class="card-img-top" alt="${name}" data-toggle="modal" data-target=".bd-example-modal-xl">
@@ -111,10 +116,12 @@ const printData = (result) => {
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item tarjeta text-center card-text">${rol} 
-        <p>${rol2}</p></li>
+        <p>${rol2}</p>
+        </li>
       </ul>
       <div class="card-body">
-        <a href="#" class="card-link">Ver mas</a>
+      <img src="${logo}" width="80"; height="80" alt="${name}">
+        <a href="#" class="card-link ">Ver mas</a>
       </div>
     </div>
   </div> `;
@@ -135,7 +142,7 @@ const printModal = (data) => {
       for (key in data) {
         if (paData == key) {
           let dataModal = data[key]
-          console.log(dataModal);
+          // console.log(dataModal);
           let name = dataModal.name
           let title = dataModal.title
           let rol = dataModal.tags[0]
