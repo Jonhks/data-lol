@@ -6,6 +6,7 @@ const example = () => {
 };
 
 window.example = example;
+$('#myModal').modal('toogle')
 
 // fetch('./data/lol/lol.json')
 // .then(function(response){
@@ -89,21 +90,21 @@ const getData = (data) => {
     array.push(objData)
     printData(objData)
   }
-  // console.log(array);
-  return array;
+  printModal(data)
+  // console.log(data);
+  return data;
 }
 
 const printData = (result) => {
   const print = document.getElementById('root');
-  const paraModal = document.getElementById('para-modal');
   let name = result.name
   let title = result.title
   let rol = result.rol
   let rol2 = result.rol2
   let image = result.image
-  let printCard = `<div class=" col-12 col-sm-6 col-md-3 shadow-lg p-3 mb-0 target">
-    <div class="card">
-      <img src="${image}" width="100%"; height="50%" class="card-img-top" alt="${name}" data-toggle="modal" data-target=".bd-example-modal-lg">
+  let printCard = `<div class=" col-12 col-sm-6 col-md-3 shadow-lg p-3 mb-0 target ">
+    <div class="card champs">
+      <img  id="${name}" src="${image}" width="100%"; height="40%" class="card-img-top" alt="${name}" data-toggle="modal" data-target=".bd-example-modal-xl">
       <div class="card-body">
         <h4 class="card-title text-center">${name}</h4>
         <h5 class="card-text text-center">${title}</h5>
@@ -117,17 +118,40 @@ const printData = (result) => {
       </div>
     </div>
   </div> `;
-  let miModal = ` <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-<img src="${image}" alt="" width="100%">
-    <div class="modal-content tarjeta">
-      <h4 class="text-center ">${name}</h4>
-      <p class="text-center ">${rol}</p>
-    </div>
-  </div>
-</div>`;
   print.insertAdjacentHTML('beforeend', printCard);
-  paraModal.insertAdjacentHTML('beforeend', miModal)
-  console.log(this)
+  // console.log(name)
+  return;
 }
-$('#myModal').modal('toogle')
+
+
+const printModal = (data) => {
+  const champs = document.getElementsByClassName('champs');
+  const paraModal = document.getElementById('para-modal');
+  for (let i = 0; i < champs.length; i++) {
+    champs[i].addEventListener('click', () => {
+      let paData = event.target.id;
+      console.log(paData)
+      // console.log(data)
+      for (key in data) {
+        if (paData == key) {
+          let dataModal = data[key]
+          console.log(dataModal);
+          let name = dataModal.name
+          let title = dataModal.title
+          let rol = dataModal.tags[0]
+          let rol2 = dataModal.tags[1]
+          let image = dataModal.splash
+          let miModal = ` <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-xl">
+            <img src="${image}" alt="${name}" width="100%;">
+            </div>
+          </div>`;
+           paraModal.innerHTML = miModal
+           printModal()
+        }
+      }
+    })
+  }
+  // console.log(champs[0].id)
+  // console.log(data)
+}
