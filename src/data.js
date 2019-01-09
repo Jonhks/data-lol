@@ -6,7 +6,6 @@ const example = () => {
 };
 
 window.example = example;
-$('#myModal').modal('toggle')
 
 // fetch('./data/lol/lol.json')
 // .then(function(response){
@@ -96,14 +95,15 @@ const getData = (data) => {
 
 const printData = (result) => {
   const print = document.getElementById('root');
+  const paraModal = document.getElementById('para-modal');
   let name = result.name
   let title = result.title
   let rol = result.rol
   let rol2 = result.rol2
   let image = result.image
-  printCard = `<div class=" col-12 col-sm-6 col-md-3 shadow-lg p-3 mb-0 target">
+  let printCard = `<div class=" col-12 col-sm-6 col-md-3 shadow-lg p-3 mb-0 target">
     <div class="card">
-      <img src="${image}" width="100%"; height="50%" class="card-img-top" alt="${name}">
+      <img src="${image}" width="100%"; height="50%" class="card-img-top" alt="${name}" data-toggle="modal" data-target=".bd-example-modal-lg">
       <div class="card-body">
         <h4 class="card-title text-center">${name}</h4>
         <h5 class="card-text text-center">${title}</h5>
@@ -117,7 +117,17 @@ const printData = (result) => {
       </div>
     </div>
   </div> `;
+  let miModal = ` <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+<img src="${image}" alt="" width="100%">
+    <div class="modal-content tarjeta">
+      <h4 class="text-center ">${name}</h4>
+      <p class="text-center ">${rol}</p>
+    </div>
+  </div>
+</div>`;
   print.insertAdjacentHTML('beforeend', printCard);
-  console.log(result.image);
-
+  paraModal.insertAdjacentHTML('beforeend', miModal)
+  console.log(this)
 }
+$('#myModal').modal('toogle')
