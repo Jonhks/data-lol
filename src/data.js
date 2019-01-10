@@ -1,59 +1,12 @@
 // esta es una función de ejemplo
 // puedes ver como agregamos la función a nuestro objeto global window
 
-const example = () => {
-  return 'example';
-};
+// const example = () => {
+//   return 'example';
+// };
 
-window.example = example;
+// window.example = example;
 $('#myModal').modal('toogle')
-
-// fetch('./data/lol/lol.json')
-// .then(function(response){
-//   // response => response.json()
-//   console.log(response)
-//   return response.json()
-// })
-// const url = './data/lol/lol.json'
-
-// -----------Funciona
-
-// const dataLol = url => fetch(url).then(response => response.json()) ;
-
-// Promise.all(
-//   [
-//     dataLol('./data/lol/lol.json')
-//   ]
-// ).then( result => {
-//   prueba(result[0])
-// })
-
-// const prueba = (result) => {
-//   console.log(result)
-// } 
-
-// --------------- hasta aquí
-
-
-// fetch('./data/lol/lol.json')
-//   .then(function (response){
-//     if (response.status !== 200) {
-//       console.log('Looks like there was a problem. Status Code: ' + response.status);
-//       return;
-//   }
-//   response.json()
-//   .then(function(data){
-//     dataLol(data)
-//   })
-// }
-// )
-// .catch(function(err) {
-//   console.log('Fetch Error :-S', err);
-// });
-
-// const dataLol = (data) => {
-//   console.log(data)
-// }
 
 const url = './data/lol/lol.json'
 fetch(url).then(response => {
@@ -63,6 +16,14 @@ fetch(url).then(response => {
   }
   response.json()
     .then(data => getData(data))
+    .then(data => {
+      const searchInput = document.getElementById('search')
+
+      searchInput.addEventListener('keyup', () => {
+        console.log(searchInput.value)
+      })
+
+    })
 }).catch(err => console.log('Fetch error' + err))
 
 // para async
@@ -92,9 +53,10 @@ const getData = (data) => {
     // console.log(data[key].img);
     array.push(objData)
     printData(objData)
-    
+
   }
   printModal(data)
+  filterData(array)
   // console.log(data);
   return data;
 }
@@ -121,7 +83,7 @@ const printData = (result) => {
       </ul>
       <div class="card-body">
       <img src="${logo}" width="80"; height="80" alt="${name}">
-        <a href="#" class="card-link ">Ver mas</a>
+        <a href="#" class="card-link">Ver mas...</a>
       </div>
     </div>
   </div> `;
@@ -153,12 +115,30 @@ const printModal = (data) => {
             <img src="${image}" alt="${name}" width="100%;">
             </div>
           </div>`;
-           paraModal.innerHTML = miModal
-           printModal()
+          paraModal.innerHTML = miModal
+          printModal()
         }
       }
     })
   }
   // console.log(champs[0].id)
   // console.log(data)
+}
+
+const filterData = (array) => {
+//   // array.forEach(element => {
+//   //   console.log(element.name);
+//   // });
+//   array.filter(element => {
+//     element = element.name
+//     element = element.toLowerCase()
+//     for(let i = 0 ; i<element.length; i++){
+//       if(element[i] == letras){
+//         console.log(element);
+//       }
+//     }
+//     // element == 'A' ? console.log(element) : console.log('error');
+//     //  console.log(element)
+//   })
+
 }
