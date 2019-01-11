@@ -1,12 +1,12 @@
 require('../src/data.js');
 
 
-describe('example', () => {
+describe('fetchData', () => {
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof fetchData).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
+  it('returns `promesa`', () => {
+    expect(fetchData() instanceof Promise).toBe(true);
   });
 });
