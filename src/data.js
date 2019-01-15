@@ -64,7 +64,7 @@ const proccesData = (data) => {
 //         <h5 class="card-text text-center">${title}</h5>
 //       </div>
 //       <ul class="list-group list-group-flush">
-//         <li class="list-group-item tarjeta text-center card-text">${rol} 
+//         <li class="list-group-item tarjeta text-center card-text">${rol}
 //         <p>${rol2}</p>
 //         </li>
 //       </ul>
@@ -136,4 +136,3 @@ const fetchData =  () => fetch('./data/lol/lol.json')
 .catch(err => console.error(`El fetch fallo: => ${err}`))
 
 window.fetchData = fetchData
-window.proccesData = proccesData
