@@ -44,6 +44,7 @@ const proccesData = (data) => {
   }
   // printModal(data)
   // console.log(data);
+  localStorage.setItem("newData", JSON.stringify(array));
   return array;
 }
 
@@ -129,8 +130,10 @@ const proccesData = (data) => {
 // }
 
 
-const fetchData = () => fetch('./data/lol/lol.json')
+const fetchData =  () => fetch('./data/lol/lol.json')
 .then(resp => resp.json())
-.then(json => proccesData(json.data));
+.then(json => proccesData(json.data))
+.catch(err => console.error(`El fetch fallo: => ${err}`))
 
 window.fetchData = fetchData
+window.proccesData = proccesData
