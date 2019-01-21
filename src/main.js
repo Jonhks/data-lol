@@ -2,25 +2,12 @@ let search = document.getElementById('search');
 const root = document.getElementById('root');
 
 const filterData = () => {
-    const dataFiltrada = JSON.parse(localStorage.getItem('newData'))
-    // console.log(data)
-    root.innerHTML = "";
-    let champLetter = search.value
-    champLetter = champLetter.toLowerCase()
-    let filtered = dataFiltrada.filter(champ => {
-      let champName = champ.name
-      champName = champName.toLowerCase()
-      for (let i = 0; i < champName.length; i++) {
-        if (champName[i] == champLetter) {
-          return champ
-        }
-      }
-    })
-    printData(filtered)
-    return filtered
+  const dataFiltrada = JSON.parse(localStorage.getItem('newData'))
+  let letterSearch = search.value.toLowerCase()
+  const filtered = dataFiltrada.filter(champ => champ.name.toLowerCase().indexOf(letterSearch) >= 0)
+  printData(filtered)
+  return filtered
 }
-
-search.addEventListener('keyup', filterData)
 
 const printData = (data) => {
   let str = data.reduce((prev, item) => `${prev} ${championToStr(item)}`, '');
@@ -49,7 +36,9 @@ const championToStr = (champion) => {
     </div> `
 }
 
+// filterData()
 
+search.addEventListener('keyup', filterData)
 
 const main = () => {
   window.fetchData()
