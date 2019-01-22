@@ -1,5 +1,31 @@
 let search = document.getElementById('search');
 const root = document.getElementById('root');
+const dropdown = document.getElementById('dropdown')
+const rols = document.getElementsByClassName('rols')
+
+dropdown.addEventListener('change', () => {
+    const dataFiltrada = JSON.parse(localStorage.getItem('newData'))
+  for (let i = 0; i < rols.length; i++) {
+    if(rols[i].checked){
+    const rolFiltered = dataFiltrada.filter( champ => champ.rol.toLowerCase() === event.target.id) 
+      console.log(rols[i].id)
+    }
+  }
+})
+
+// filtrar por los BhxBrowser, solo hace uno
+
+// for(let i = 0 ; i< rols.length; i++){
+//   rols[i].addEventListener('click', () => {
+//     const dataFiltrada = JSON.parse(localStorage.getItem('newData'))
+//     const rolFiltered = dataFiltrada.filter( champ => champ.rol.toLowerCase() === event.target.id) 
+//     printData(rolFiltered)
+//     return rolFiltered
+//   })
+// }
+
+// rols.addEventListener('click', () =>{})
+
 
 const filterData = () => {
   const dataFiltrada = JSON.parse(localStorage.getItem('newData'))
@@ -35,8 +61,6 @@ const championToStr = (champion) => {
         </div>
     </div> `
 }
-
-// filterData()
 
 search.addEventListener('keyup', filterData)
 
