@@ -11,15 +11,16 @@
     background-color: black !important;
 }
 
-.nav-link {
+.nav-link, .link{
     color: #FB9C02;
+    margin: auto;
 }
 
-.nav-link:hover {
+.nav-link:hover, .link:hover {
     opacity: 3%;
     color: white;
 }
-.nav-link:active {
+.nav-link:active, .link:active {
     opacity: 3%;
     color: white;
     border-bottom: white;
@@ -34,7 +35,7 @@
 .search:focus {
     background-color: black;
     color: rgb(134, 108, 65);
-    border: .5px solid #FB9C02;
+    border: .5px solid #FB9C02
 }
   
 h1{
@@ -52,6 +53,13 @@ h1{
     font-size: .8em;
 }
 
-.target{
-    background-color: black;
+.target, .drop{
+    background-color: black !important;
+    color: #FB9C02 !important;
+
+}
+
+.dropdown-toggle::after{
+    color: #FB9C02 !important;
+    
 }
