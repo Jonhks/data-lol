@@ -18,19 +18,65 @@
     <a class="navbar-brand" href="#">
       <img src="../src/img/logo.png" width="80" height="50" class="d-inline-block align-top" alt="">
     </a>
-    <ul class="nav justify-content-end">
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Active</a>
+    <ul class="nav nav-pills">
+      <li id="dropdowm" class="nav-item dropdown link">
+        <a class="nav-link dropdown-toggle drop" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+          aria-expanded="false">Rol</a>
+        <div id="dropdown" class="dropdown-menu drop">
+          <div>
+            <input id="fighter" class="form-check-input rols" type="checkbox">
+            <label for="fighter">figther</label>
+          </div>
+          <div>
+            <input id="mage" class="form-check-input rols" type="checkbox">
+            <label for="mage">Mage</label>
+          </div>
+          <div>
+            <input id="assassin" class="form-check-input rols" type="checkbox">
+            <label for="assassin">Assassin</label>
+          </div>
+          <div>
+            <input id="tank" class="form-check-input rols" type="checkbox">
+            <label for="tank">Tank</label>
+          </div>
+          <div>
+            <input id="marksman" class="form-check-input rols" type="checkbox">
+            <label for="marksman">Marksman</label>
+          </div>
+          <div>
+            <input id="support" class="form-check-input rols" type="checkbox">
+            <label for="support">Support</label>
+          </div>
+        </div>
       </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="#">Rol 2</a>
+      </li> -->
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#" tabindex="-1">A-Z</a>
       </li>
     </ul>
-    <input id="search" type="text" class="search form-control mr-sm-2" type="search" placeholder="Buscar campeon" aria-label="Search">
+
+
+    <input id="search" type="text" class="search form-control mr-sm-2" type="search" placeholder="Buscar campeon"
+      aria-label="Search">
   </nav>
+
+  <!-- <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+    <label class="form-check-label" for="inlineCheckbox1">1</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+    <label class="form-check-label" for="inlineCheckbox2">2</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+    <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+  </div> -->
+
+
+
 
   <div class="container-fluid">
     <div class="row">
