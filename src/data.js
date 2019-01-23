@@ -1,4 +1,5 @@
 const proccesData = (data) => {
+  console.log(data)
   const array = [];
   for (const key in data) {
     array.push({
@@ -7,7 +8,9 @@ const proccesData = (data) => {
       rol: data[key].tags[0],
       rol2: data[key].tags[1],
       image: data[key].splash,
-      logo: data[key].img
+      logo: data[key].img,
+      info: data[key].info,
+      stats: data[key].stats
     })
   }
   localStorage.setItem("newData", JSON.stringify(array));

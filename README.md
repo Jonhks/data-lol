@@ -517,8 +517,8 @@ compañera:
 
 ## Checklist
 
-* [ ] Usa VanillaJS.
-* [ ] No hace uso de `this`.
+* [x] Usa VanillaJS.
+* [x] No hace uso de `this`.
 * [ ] Pasa linter (`npm pretest`)
 * [ ] Pasa tests (`npm test`)
 * [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
@@ -532,6 +532,6 @@ compañera:
 * [ ] Incluye link a Zeplin en `README.md`.
 * [ ] Incluye el listado de problemas que detectaste a través de tests de
   usabilidad en el `README.md`.
-* [ ] UI: Muestra lista y/o tabla con datos y/o indicadores.
-* [ ] UI: Permite ordenar data por uno o más campos (asc y desc).
-* [ ] UI: Permite filtrar data en base a una condición.
+* [x] UI: Muestra lista y/o tabla con datos y/o indicadores.
+* [x] UI: Permite ordenar data por uno o más campos (asc y desc).
+* [x] UI: Permite filtrar data en base a una condición.
