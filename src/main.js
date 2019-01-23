@@ -29,13 +29,11 @@ const filterData = () => {
   return filtered
 }
 
-
 const printData = (data) => {
   let str = data.reduce((prev, item) => `${prev} ${championToStr(item)}`, '');
   root.innerHTML = str;
   return str;
 }
-
 
 const championToStr = (champion) => {
   return `<div class=" col-12 col-sm-6 col-md-3 shadow-lg p-3 mb-0 target ">
