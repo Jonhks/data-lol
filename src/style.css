@@ -70,10 +70,12 @@ h1 {
 
 .my-modal {
     height: 80vh;
+    width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     font-size: 1em;
+    border: 1px solid rgb(134, 108, 65);
 }
 
 .float-left {
@@ -93,10 +95,13 @@ li {
 .card-header {
     color: #FB9C02 !important;
     border: 1px solid rgb(134, 108, 65);
+    opacity: .8;
 }
 
 .card-body {
     color: #FB9C02;
+    opacity: .9;
+
 }
 
 .select{
@@ -118,4 +123,8 @@ li {
     .select{
         display: block;
     }
+}
+
+a:hover, img:hover{
+    cursor: pointer;
 }

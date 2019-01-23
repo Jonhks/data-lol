@@ -3,9 +3,10 @@ const root = document.getElementById('root');
 const dropdown = document.getElementById('dropdown')
 const rols = document.getElementsByClassName('rols')
 const voltear = document.getElementById('voltear')
+let paraModal = document.getElementById('para-modal')
 let dataFiltrada = JSON.parse(localStorage.getItem('newData'))
+const cards = document.getElementsByClassName('card-img-top');
 $('#myModal').modal('toggle')
-
 
 dropdown.addEventListener('change', () => {
   for (let i = 0; i < rols.length; i++) {
@@ -15,6 +16,89 @@ dropdown.addEventListener('change', () => {
     }
   }
 })
+
+const printModal = (champ) =>{
+  paraModal.innerHTML = "";
+  let modal = `
+  <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-xl ">
+        <div class="modal-content">
+          <div style="background-image: url(${champ.image}"
+            id="pruebaFondo" class="card text-center my-modal">
+            <div class="card-header">
+              <h2>${champ.name}</h2>
+              <p class="card-text">${champ.title}</p>
+            </div>
+            <div class="card-body"> 
+              <h5 class="card-title">${champ.rol}</h5>
+            </div>
+            <div class="card-footer ">
+              <h4>Estadisticas</h4>
+              <div class="row footer-card">
+                <div class="col-md-4 text-left">
+                  <ul>
+                    <li>Attack: ${champ.info.attack} </li>
+                    <li>Defense: ${champ.info.defense}</li>
+                    <li>Magic: ${champ.info.magic}</li>
+                    <li>Dificulty: ${champ.info.difficulty}</li>
+                  </ul>
+                </div>
+                <div class="col-md-4 text-left">
+                  <ul>
+                    <li>Armor : ${champ.stats.armor}</li>
+                    <li>Armorperlevel: ${champ.stats.armorperlevel}</li>
+                    <li>Attackdamage: ${champ.stats.attackdamage}</li>
+                    <li>Attackrange: ${champ.stats.attackrange}</li>
+                  </ul>
+                </div>
+                <div class="col-md-4 text-left">
+                  <ul>
+                    <li>Attackspeedperlevel: ${champ.stats.attackspeedperlevel}</li>
+                    <li>Crit: ${champ.stats.crit}</li>
+                    <li>Movespeed: ${champ.stats.movespeed}</li>
+                    <li>Spellblock: ${champ.stats.spellblock}</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="select"
+                <div class="btn-group">
+                  <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    Detalles
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Attack: ${champ.info.attack} </a>
+                    <a class="dropdown-item" href="#">Defense: ${champ.info.defense}</</a>
+                    <a class="dropdown-item" href="#">Magic: ${champ.info.magic}</</a>
+                    <a class="dropdown-item" href="#">Difficulty ${champ.info.difficulty}</</a>
+                    <a class="dropdown-item" href="#">Armor: ${champ.stats.armor}</</a>
+                    <a class="dropdown-item" href="#">Attackdamage: ${champ.stats.attackdamage}</</a>
+                    <a class="dropdown-item" href="#">movespeed: ${champ.stats.movespeed}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+  paraModal.innerHTML = modal;
+}
+
+const prepararModal = () =>{
+  for (let i= 0; i < cards.length; i++ ) {
+    cards[i].addEventListener('click', () =>{
+      let filtered = dataFiltrada.filter(champ => champ.name.toLowerCase() === event.target.id)
+      let champ = filtered[0]
+      printModal(champ)
+    })
+  }
+}
+
+
+
 
 voltear.addEventListener('click', () => {
   dataFiltrada = dataFiltrada.reverse()
@@ -30,6 +114,7 @@ const filterData = () => {
 }
 
 const printData = (data) => {
+  console.log(data[0].stats)
   let str = data.reduce((prev, item) => `${prev} ${championToStr(item)}`, '');
   root.innerHTML = str;
   return str;
@@ -38,7 +123,7 @@ const printData = (data) => {
 const championToStr = (champion) => {
   return `<div class=" col-12 col-sm-6 col-md-3 shadow-lg p-3 mb-0 target ">
     <div class="card champs">
-        <img  id="${champion.name}" src="${champion.image}" width="100%"; height="40%" class="card-img-top" alt="${champion.name}" data-toggle="modal" data-target=".bd-example-modal-xl">
+        <img  id="${champion.name.toLowerCase()}" src="${champion.image}" width="100%"; height="40%" class="card-img-top" alt="${champion.name}" data-toggle="modal" data-target=".bd-example-modal-xl">
         <div class="card-body">
             <h4 class="card-title text-center">${champion.name}</h4>
             <h5 class="card-text text-center">${champion.title}</h5>
@@ -51,7 +136,7 @@ const championToStr = (champion) => {
         <div class="card-body">
           <img src="${champion.logo}" width="25%"; height="25%" alt="${champion.name}">
           <span class="text-right">
-            <a href="#" class="card-link">Ver mas...</a>
+            <a href="https://universe.leagueoflegends.com/es_MX/champion/${champion.name.toLowerCase()}/" target= "_blanck" class="card-link">Ver mas...</a>
           </span>
         </div>
         </div>
@@ -60,13 +145,14 @@ const championToStr = (champion) => {
 
 
 
+
 search.addEventListener('keyup', filterData)
 
 const main = () => {
   window.fetchData()
     .then(data => printData(data))
+    .then(data => prepararModal())
     .catch(err => console.error(`error ${err}`))
 }
 
 window.addEventListener('load', main);
-// document.getElementById('pruebaFondo').style.backgroundImage = "url('http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg')";
