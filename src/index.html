@@ -15,7 +15,7 @@
 <body>
   <!-- Image and text -->
   <nav class="navbar navbar-dark bg-dark nav">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="https://universe.leagueoflegends.com/en_US/" target="_blank">
       <img src="../src/img/logo.png" width="80" height="50" class="d-inline-block align-top" alt="">
     </a>
     <ul class="nav nav-pills">
@@ -41,7 +41,7 @@
           </div>
           <div>
             <input id="marksman" class="form-check-input rols" type="checkbox">
-            <label for="marksman">Marksman</label>
+            <label for="marksman">Adc</label>
           </div>
           <div>
             <input id="support" class="form-check-input rols" type="checkbox">
@@ -49,10 +49,7 @@
           </div>
         </div>
       </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="#">Rol 2</a>
-      </li> -->
-      <li class="nav-item">
+      <li id="voltear" class="nav-item">
         <a class="nav-link" href="#" tabindex="-1">A-Z</a>
       </li>
     </ul>
@@ -61,21 +58,6 @@
     <input id="search" type="text" class="search form-control mr-sm-2" type="search" placeholder="Buscar campeon"
       aria-label="Search">
   </nav>
-
-  <!-- <div class="form-check form-check-inline">
-    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-    <label class="form-check-label" for="inlineCheckbox1">1</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-    <label class="form-check-label" for="inlineCheckbox2">2</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
-    <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
-  </div> -->
-
-
 
 
   <div class="container-fluid">
@@ -89,9 +71,61 @@
     </div>
   </div>
 
-  <div id="para-modal" class="row">
+  <div id="para-modal" class="champs">
+    <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-xl ">
+        <div class="modal-content">
+          <div style="background-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg)"
+            id="pruebaFondo" class="card text-center my-modal">
+            <div class="card-header">
+              <h2>Nombre del campeon</h2>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Rol principal</h5>
+              <p class="card-text">Titulo</p>
+            </div>
+            <div class="card-footer  ">
+              <h4>Estadisticas</h4>
+              <div>
+                <div class="float-left text-left">
+                  <ul>
+                    <li>hp: </li>
+                    <li>mpregen</li>
+                    <li>hpperlevel</li>
+                    <li>mp</li>
+                    <li>mpperlevel</li>
+                    <li>movespeed</li>
+                    <li>armor</li>
+                    <li>armorperlevel</li>
+                    <li>spellblock</li>
+                    <li>spellblockperlevel</li>
+                  </ul>
+                </div>
+                <div class="float-right text-left">
+                  <ul>
+                    <li>attackrange</li>
+                    <li>hpregen</li>
+                    <li>hpregenperlevel</li>
+                    <li>mpregenperlevel</li>
+                    <li>crit</li>
+                    <li>critperlevel</li>
+                    <li>attackdamage</li>
+                    <li>attackdamageperlevel</li>
+                    <li>attackspeedoffset</li>
+                    <li>attackspeedperlevel</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
   </div>
+
 
 
 
