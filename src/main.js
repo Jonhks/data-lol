@@ -73,8 +73,8 @@ const printModal = (champ) =>{
                     <a class="dropdown-item" href="#">Magic: ${champ.info.magic}</</a>
                     <a class="dropdown-item" href="#">Difficulty ${champ.info.difficulty}</</a>
                     <a class="dropdown-item" href="#">Armor: ${champ.stats.armor}</</a>
-                    <a class="dropdown-item" href="#">Attackdamage: ${champ.stats.attackdamage}</</a>
-                    <a class="dropdown-item" href="#">movespeed: ${champ.stats.movespeed}</a>
+                    <a class="dropdown-item" href="#">Attack damage: ${champ.stats.attackdamage}</</a>
+                    <a class="dropdown-item" href="#">Move speed: ${champ.stats.movespeed}</a>
                   </div>
                 </div>
               </div>
@@ -114,14 +114,13 @@ const filterData = () => {
 }
 
 const printData = (data) => {
-  console.log(data[0].stats)
   let str = data.reduce((prev, item) => `${prev} ${championToStr(item)}`, '');
   root.innerHTML = str;
   return str;
 }
 
 const championToStr = (champion) => {
-  return `<div class=" col-12 col-sm-6 col-md-3 shadow-lg p-3 mb-0 target ">
+  return `<div class=" col-12 col-xl-2 col-sm-6 col-md-3 shadow-lg p-3 mb-0 target ">
     <div class="card champs">
         <img  id="${champion.name.toLowerCase()}" src="${champion.image}" width="100%"; height="40%" class="card-img-top" alt="${champion.name}" data-toggle="modal" data-target=".bd-example-modal-xl">
         <div class="card-body">
@@ -134,8 +133,8 @@ const championToStr = (champion) => {
             </li>
         </ul>
         <div class="card-body">
-          <img src="${champion.logo}" width="25%"; height="25%" alt="${champion.name}">
-          <span class="text-right">
+          <img src="${champion.logo}" width="25%"; height="25%" alt="${champion.name}" class="img-micro" >
+          <span>
             <a href="https://universe.leagueoflegends.com/es_MX/champion/${champion.name.toLowerCase()}/" target= "_blanck" class="card-link">Ver mas...</a>
           </span>
         </div>
