@@ -1,4 +1,4 @@
-.container-fluid{
+.container-fluid {
     background-image: url('img/fondo.jpg');
     background-position: center;
     background-size: cover;
@@ -7,70 +7,76 @@
     opacity: .95;
 }
 
-.nav{
+.nav {
     background-color: black !important;
 }
 
-.nav-link, .link{
+.nav-link,
+.link {
     color: #FB9C02;
     margin: auto;
 }
 
-.nav-link:hover, .link:hover {
+.nav-link:hover,
+.link:hover {
     opacity: 3%;
     color: white;
 }
-.nav-link:active, .link:active {
+
+.nav-link:active,
+.link:active {
     opacity: 3%;
     color: white;
     border-bottom: white;
 }
 
-.search{
+.search {
     background-color: black;
     color: #FB9C02;
     border: .6px solid #FB9C02;
-  }
-  
+}
+
 .search:focus {
     background-color: black;
     color: rgb(134, 108, 65);
     border: .5px solid #FB9C02
 }
-  
-h1{
+
+h1 {
     margin-top: 8%;
     color: rgb(134, 108, 65);
 }
 
-.card, .tarjeta{
+.card,
+.tarjeta {
     background-color: black;
     border: solid 1px white;
     color: rgb(134, 108, 65);
 }
 
-.card-text{
+.card-text {
     font-size: .8em;
 }
 
-.target, .drop{
+.target,
+.drop {
     background-color: black !important;
     color: #FB9C02 !important;
-
 }
 
-.dropdown-toggle::after{
+.dropdown-toggle::after {
     color: #FB9C02 !important;
-    
 }
 
-
-.my-modal{
-    height: 70vh;
-    /* background-image: url('img/prueba.jpg') */
+.my-modal {
+    height: 80vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 1em;
 }
 
-.float-left{
+.float-left {
     display: inline-block;
 }
 
@@ -79,3 +85,37 @@ li {
     text-shadow: 1px .3px black
 }
 
+.card-footer {
+    background-color: black;
+    border: 1px solid rgb(134, 108, 65);
+}
+
+.card-header {
+    color: #FB9C02 !important;
+    border: 1px solid rgb(134, 108, 65);
+}
+
+.card-body {
+    color: #FB9C02;
+}
+
+.select{
+    display:none;
+}
+
+.dropdown-menu, .dropdown-item{
+    background-color: black;
+    color: #FB9C02;
+
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+    .footer-card {
+        display: none;
+    }
+    .select{
+        display: block;
+    }
+}
