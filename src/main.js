@@ -120,7 +120,7 @@ const printData = (data) => {
 }
 
 const championToStr = (champion) => {
-  return `<div class=" col-12 col-xl-2 col-sm-6 col-md-3 shadow-lg p-3 mb-0 target ">
+  return `<div class=" col-12 col-sm-6 col-md-3 shadow-lg p-3 mb-0 target ">
     <div class="card champs">
         <img  id="${champion.name.toLowerCase()}" src="${champion.image}" width="100%"; height="40%" class="card-img-top" alt="${champion.name}" data-toggle="modal" data-target=".bd-example-modal-xl">
         <div class="card-body">
