@@ -29,7 +29,7 @@
 .search{
     background-color: black;
     color: #FB9C02;
-    border: none;
+    border: .6px solid #FB9C02;
   }
   
 .search:focus {
@@ -63,3 +63,19 @@ h1{
     color: #FB9C02 !important;
     
 }
+
+
+.my-modal{
+    height: 70vh;
+    /* background-image: url('img/prueba.jpg') */
+}
+
+.float-left{
+    display: inline-block;
+}
+
+li {
+    list-style: none;
+    text-shadow: 1px .3px black
+}
+

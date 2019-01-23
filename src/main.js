@@ -2,33 +2,27 @@ let search = document.getElementById('search');
 const root = document.getElementById('root');
 const dropdown = document.getElementById('dropdown')
 const rols = document.getElementsByClassName('rols')
+const voltear = document.getElementById('voltear')
+let dataFiltrada = JSON.parse(localStorage.getItem('newData'))
+$('#myModal').modal('toggle')
+
 
 dropdown.addEventListener('change', () => {
-    const dataFiltrada = JSON.parse(localStorage.getItem('newData'))
   for (let i = 0; i < rols.length; i++) {
-    if(rols[i].checked){
-    const rolFiltered = dataFiltrada.filter( champ => champ.rol.toLowerCase() === event.target.id) 
-      console.log(rols[i].id)
+    if (rols[i].checked) {
+      let rolFiltered = dataFiltrada.filter(champ => champ.rol.toLowerCase() === rols[i].id)
+      printData(rolFiltered)
     }
   }
 })
 
-// filtrar por los BhxBrowser, solo hace uno
-
-// for(let i = 0 ; i< rols.length; i++){
-//   rols[i].addEventListener('click', () => {
-//     const dataFiltrada = JSON.parse(localStorage.getItem('newData'))
-//     const rolFiltered = dataFiltrada.filter( champ => champ.rol.toLowerCase() === event.target.id) 
-//     printData(rolFiltered)
-//     return rolFiltered
-//   })
-// }
-
-// rols.addEventListener('click', () =>{})
-
+voltear.addEventListener('click', () => {
+  dataFiltrada = dataFiltrada.reverse()
+  printData(dataFiltrada)
+  return dataFiltrada
+})
 
 const filterData = () => {
-  const dataFiltrada = JSON.parse(localStorage.getItem('newData'))
   let letterSearch = search.value.toLowerCase()
   const filtered = dataFiltrada.filter(champ => champ.name.toLowerCase().indexOf(letterSearch) >= 0)
   printData(filtered)
@@ -55,12 +49,16 @@ const championToStr = (champion) => {
             </li>
         </ul>
         <div class="card-body">
-        <img src="${champion.logo}" width="80"; height="80" alt="${champion.name}">
+          <img src="${champion.logo}" width="25%"; height="25%" alt="${champion.name}">
+          <span class="text-right">
             <a href="#" class="card-link">Ver mas...</a>
+          </span>
         </div>
         </div>
     </div> `
 }
+
+
 
 search.addEventListener('keyup', filterData)
 
@@ -71,3 +69,4 @@ const main = () => {
 }
 
 window.addEventListener('load', main);
+// document.getElementById('pruebaFondo').style.backgroundImage = "url('http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg')";
