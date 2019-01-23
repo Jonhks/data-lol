@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <!-- Image and text -->
+
   <nav class="navbar navbar-dark bg-dark nav">
     <a class="navbar-brand" href="https://universe.leagueoflegends.com/en_US/" target="_blank">
       <img src="../src/img/logo.png" width="80" height="50" class="d-inline-block align-top" alt="">
@@ -53,8 +53,6 @@
         <a class="nav-link" href="#" tabindex="-1">A-Z</a>
       </li>
     </ul>
-
-
     <input id="search" type="text" class="search form-control mr-sm-2" type="search" placeholder="Buscar campeon"
       aria-label="Search">
   </nav>
@@ -69,9 +67,14 @@
     <div id="root" class="row target">
 
     </div>
+
+
+
   </div>
+  <!-- cierre de container -->
 
   <div id="para-modal" class="champs">
+    <!-- inicio modal  -->
     <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-xl ">
@@ -85,16 +88,20 @@
               <h5 class="card-title">Rol principal</h5>
               <p class="card-text">Titulo</p>
             </div>
-            <div class="card-footer  ">
+            <div class="card-footer ">
               <h4>Estadisticas</h4>
-              <div>
-                <div class="float-left text-left">
+              <div class="row footer-card">
+                <div class="col-md-3 text-left">
                   <ul>
                     <li>hp: </li>
                     <li>mpregen</li>
                     <li>hpperlevel</li>
                     <li>mp</li>
                     <li>mpperlevel</li>
+                  </ul>
+                </div>
+                <div class="col-md-3 text-left">
+                  <ul>
                     <li>movespeed</li>
                     <li>armor</li>
                     <li>armorperlevel</li>
@@ -102,46 +109,63 @@
                     <li>spellblockperlevel</li>
                   </ul>
                 </div>
-                <div class="float-right text-left">
+                <div class="col-md-3 text-left">
                   <ul>
-                    <li>attackrange</li>
-                    <li>hpregen</li>
-                    <li>hpregenperlevel</li>
-                    <li>mpregenperlevel</li>
-                    <li>crit</li>
-                    <li>critperlevel</li>
-                    <li>attackdamage</li>
-                    <li>attackdamageperlevel</li>
-                    <li>attackspeedoffset</li>
-                    <li>attackspeedperlevel</li>
+                    <li>movespeed</li>
+                    <li>armor</li>
+                    <li>armorperlevel</li>
+                    <li>spellblock</li>
+                    <li>spellblockperlevel</li>
+                  </ul>
+                </div>
+                <div class="col-md-3 text-left">
+                  <ul>
+                    <li>movespeed</li>
+                    <li>armor</li>
+                    <li>armorperlevel</li>
+                    <li>spellblock</li>
+                    <li>spellblockperlevel</li>
                   </ul>
                 </div>
               </div>
+              <div class="select"><!-- parte a ocultar -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Detalles
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Action</a>
+                    </div>
+                  </div>
+              </div><!-- fin de ocultar -->
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </div><!-- final de modal -->
 
-
-  </div>
-
-
-
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-    crossorigin="anonymous"></script>
-  <!-- <script src="./data/injuries/injuries.js"></script> -->
-  <!-- <script src="./data/pokemon/pokemon.js"></script> -->
-  <!-- <script src="./data/steam/steam.js"></script> -->
-  <!-- <script src="./data/worldbank/worldbank.js"></script> -->
-  <!-- <script src="./data/lol/lol.js"></script> -->
-  <script src="data.js"></script>
-  <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"></script>
+    <!-- <script src="./data/injuries/injuries.js"></script> -->
+    <!-- <script src="./data/pokemon/pokemon.js"></script> -->
+    <!-- <script src="./data/steam/steam.js"></script> -->
+    <!-- <script src="./data/worldbank/worldbank.js"></script> -->
+    <!-- <script src="./data/lol/lol.js"></script> -->
+    <script src="data.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>
