@@ -13,7 +13,7 @@ Las alternativas son las siguientes:
 
 ### 1. Si no terminaste la "Parte Obligatoria" del proyecto
 
-Pues termínala ¿no? No te olvides de que estás acá para aprender y no para
+Te invitamos a concluir con esa parte. No te olvides de que estás acá para aprender y no para
 simplemente "pasar" de un proyecto a otro y tener la ilusión de que aprendes.
 No estás compitiendo con nadie más que contigo misma.
 
@@ -28,7 +28,7 @@ Tienes estas opciones:
 Enfócate en los dos puntos principales: _cargar la data usando [`fetch`](https://developer.mozilla.org/es/docs/Web/API/Fetch_API)_
 y/o _agregar gráficas con [`Chart.js`](https://www.chartjs.org/)
 o [`Google Charts`](https://developers.google.com/chart/)_. Si ya hiciste esto,
-pasa a las siguientes opciones (obviamente).
+veamos mas opciones.
 
 2.2. Si quieres explorar un poco más sobre el Diseño de Experiencia de Usuario
 (_UX Design_), te proponemos hacer sesiones de _testeo de usabilidad con
@@ -50,6 +50,8 @@ sobre Pokémon.
 2.4 [Refactoriza](https://es.wikipedia.org/wiki/Refactorizaci%C3%B3n) tu código
 para aumentar la cobertura de _tests_ (incluyendo pruebas para componentes de
 interfaz).
+
+2.5 Cambia el diseño de tu aplicaciñon( Que se vea diferente en escritorio, en tablet y en celular)
 
 ## Consideraciones generales
 
