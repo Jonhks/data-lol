@@ -51,17 +51,13 @@ sobre Pokémon.
 para aumentar la cobertura de _tests_ (incluyendo pruebas para componentes de
 interfaz).
 
-2.5 Cambia el diseño de tu aplicaciñon( Que se vea diferente en escritorio, en tablet y en celular)
+2.5 Cambia el diseño de tu aplicación(Que se vea diferente en escritorio, en tablet y en celular)
 
 ## Consideraciones generales
 
 - Esta segunda parte del proyecto es _individual_, salvo alguna excepción que
   decida tu _Training Manager_.
-
-- Es responsabilidad de lxs _coaches_ y la _Training Manager_, después de las
-  entrevistas del final del proyecto original "Data Lovers", aconsejar y validar
-  qué opciones de todas las detalladas en este `README.md`, se adecúan más
-  a cada estudiante.
+  
 
 ## ¿Cómo empezar?
 
@@ -74,8 +70,8 @@ git pull <repo-url> <branch>
 ```
 
 Por ejemplo, si el repo de tu cohort es
-`https://github.com/Laboratoria/lim-2018-11-bc-core-am-data-lovers.git`:
+`https://github.com/Laboratoria/CDMX-2018-11-bc-core-am-data-lovers.git`:
 
 ```sh
-git pull https://github.com/Laboratoria/lim-2018-11-bc-core-am-data-lovers.git master
+git pull upstream  master
 ```
